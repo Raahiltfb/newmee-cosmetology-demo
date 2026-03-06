@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 import { CLINIC_DATA } from '../constants';
@@ -32,10 +32,19 @@ export const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2">
-          <span className="font-display text-2xl font-bold tracking-tight text-primary">
+        {/* Updated Logo Section */}
+        <a href="/" className="flex items-center gap-3 group">
+          <div className="h-10 md:h-12 w-auto overflow-hidden transition-transform duration-300 group-hover:scale-105">
+            <img 
+              src="/newmeelogo.png" 
+              alt={CLINIC_DATA.name} 
+              className="h-full w-full object-contain"
+            />
+          </div>
+          {/* Optional: Keeping text logo hidden on mobile, visible on desktop if you want both */}
+          <span className="hidden lg:block font-display text-xl font-bold tracking-tight text-primary">
             {CLINIC_DATA.name.split(' ')[0]}
-            <span className="font-light text-accent">{CLINIC_DATA.name.split(' ')[1]}</span>
+            <span className="font-light text-accent ml-1">{CLINIC_DATA.name.split(' ')[1]}</span>
           </span>
         </a>
 
@@ -94,8 +103,10 @@ export const Navbar = () => {
                 <Phone size={18} /> Call Us
               </a>
               <a
-                href={`https://wa.me/${CLINIC_DATA.whatsapp}`}
-                className="flex items-center justify-center gap-2 bg-green-500 text-white py-3 rounded-xl font-medium"
+                href={`https://wa.me/${CLINIC_DATA.whatsapp.replace(/\D/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-xl font-medium"
               >
                 <MessageCircle size={18} /> WhatsApp
               </a>
