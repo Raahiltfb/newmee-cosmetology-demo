@@ -71,6 +71,8 @@ export const ContactSection = () => {
               </a>
               <a 
                 href={`https://wa.me/${CLINIC_DATA.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-green-500 text-white px-8 py-4 rounded-full font-bold hover:bg-green-600 transition-all flex items-center gap-2"
               >
                 <MessageCircle size={18} /> WhatsApp Us
@@ -82,17 +84,18 @@ export const ContactSection = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-[40px] overflow-hidden shadow-2xl h-[500px] border-8 border-white"
+            className="rounded-[40px] overflow-hidden shadow-2xl h-[500px] border-8 border-white bg-white"
           >
-            {/* Map Placeholder */}
+            {/* Live Google Map */}
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.827222661234!2d78.39076592518888!3d17.42007738347101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb914656149717%3A0x7779d7189191024!2sJubilee%20Hills%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/place/NewMee+Cosmetology/@13.0629091,77.6068915,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae19ecad3398f3:0xa319abbdb18531c0!8m2!3d13.0629091!4d77.6094664!16s%2Fg%2F11kj2cs9c1?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
+              title="NewMee Cosmetology Location"
             ></iframe>
           </motion.div>
         </div>
