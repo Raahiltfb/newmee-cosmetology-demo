@@ -88,7 +88,7 @@ export const ContactSection = () => {
           >
             {/* Live Google Map */}
             <iframe 
-              src="https://www.google.com/maps/place/NewMee+Cosmetology/@13.0629091,77.6068915,17z/data=!3m1!4b1!4m6!3m5!1s0x3bae19ecad3398f3:0xa319abbdb18531c0!8m2!3d13.0629091!4d77.6094664!16s%2Fg%2F11kj2cs9c1?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5717482700397!2d77.6068914753212!3d13.062909087260964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19ecad3398f3%3A0xa319abbdb18531c0!2sNewMee%20Cosmetology!5e0!3m2!1sen!2sin!4v1772780367960!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
