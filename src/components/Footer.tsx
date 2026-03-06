@@ -77,7 +77,8 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        {/* Existing Copyright and Policy Section */}
+        <div className="pt-12 border-t border-black/5 flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
           <p className="text-primary/30 text-xs font-medium">
             © {new Date().getFullYear()} {CLINIC_DATA.name}. All rights reserved.
           </p>
@@ -91,6 +92,14 @@ export const Footer = () => {
           >
             Back to Top <ArrowUp size={14} />
           </button>
+        </div>
+
+        {/* Integrated Sample Concept Banner */}
+        <div className="pt-8 border-t border-black/5 text-center">
+          <div className="text-black/40 text-[10px] uppercase tracking-[0.2em] font-bold">
+            Sample website concept prepared for 
+            <span className="text-black ml-1">{CLINIC_DATA.name}</span>
+          </div>
         </div>
       </div>
     </footer>
