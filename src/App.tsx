@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Lenis from 'lenis';
-import { DemoBanner } from './components/DemoBanner';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { SocialProofBar } from './components/SocialProofBar';
