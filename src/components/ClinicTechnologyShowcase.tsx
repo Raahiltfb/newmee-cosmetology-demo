@@ -12,7 +12,7 @@ export const ClinicTechnologyShowcase = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Pin the container
+      // 1. Pin the container - keeping it at 150% to give user time to see everything
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
@@ -28,20 +28,19 @@ export const ClinicTechnologyShowcase = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=150%",
+          end: "+=100%", // Finished rotating before the pin ends
           scrub: 1,
         }
       });
 
-      // 3. COMPRESSED LABEL ANIMATION
-      // We want all labels to finish appearing by the time we hit 60% of the scroll
+      // 3. AGGRESSIVE TIMING FOR LABELS
       const labels = gsap.utils.toArray(".tech-label");
       labels.forEach((label: any, i) => {
         gsap.fromTo(label, 
           { 
             opacity: 0, 
-            y: 20,
-            scale: 0.8 
+            y: 30,
+            scale: 0.7 
           },
           { 
             opacity: 1, 
@@ -49,10 +48,12 @@ export const ClinicTechnologyShowcase = () => {
             scale: 1,
             scrollTrigger: {
               trigger: containerRef.current,
-              // Labels now trigger much faster: 10%, 25%, 40%, 55%
-              start: `top+=${(i * 15) + 10}% top`, 
-              end: `top+=${(i * 15) + 25}% top`,
-              scrub: 0.5, // Lower scrub for faster response
+              // All labels now trigger between 5% and 40% of the total scroll
+              // This ensures the last labels ("Safe for All" and "Clinically Tested") 
+              // appear almost immediately after the first two.
+              start: `top+=${(i * 8) + 5}% top`, 
+              end: `top+=${(i * 8) + 20}% top`,
+              scrub: 0.5,
             }
           }
         );
@@ -63,10 +64,10 @@ export const ClinicTechnologyShowcase = () => {
   }, []);
 
   const techLabels = [
-    { title: "Precision Laser Technology", pos: "top-[15%] left-[0%] md:left-[5%]" },
-    { title: "Dermatologist Approved", pos: "top-[30%] right-[0%] md:right-[5%]" },
-    { title: "Safe for All Skin Types", pos: "bottom-[35%] left-[0%] md:left-[5%]" },
-    { title: "Clinically Tested Equipment", pos: "bottom-[15%] right-[0%] md:right-[5%]" },
+    { title: "Precision Laser Technology", pos: "top-[15%] left-[2%] md:left-[8%]" },
+    { title: "Dermatologist Approved", pos: "top-[28%] right-[2%] md:right-[8%]" },
+    { title: "Safe for All Skin Types", pos: "bottom-[32%] left-[2%] md:left-[8%]" },
+    { title: "Clinically Tested Equipment", pos: "bottom-[15%] right-[2%] md:right-[8%]" },
   ];
 
   return (
@@ -80,7 +81,7 @@ export const ClinicTechnologyShowcase = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 w-full relative h-full flex flex-col items-center justify-center">
-        <div className="text-center mb-8 z-10">
+        <div className="text-center mb-10 z-10">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -89,11 +90,11 @@ export const ClinicTechnologyShowcase = () => {
             Advanced Care Technology
           </motion.h2>
           <p className="text-white/60 max-w-2xl mx-auto text-sm md:text-base">
-            We invest in the world's most advanced medical-grade technology for superior results.
+            We invest in world-class, medical-grade technology to ensure safety and precision.
           </p>
         </div>
 
-        <div className="relative w-full max-w-5xl flex items-center justify-center min-h-[500px]">
+        <div className="relative w-full max-w-5xl flex items-center justify-center">
           {/* Device Container */}
           <div ref={deviceRef} className="relative z-10 w-48 h-72 md:w-72 md:h-[450px] perspective-1000">
             <div className="w-full h-full bg-neutral-900 rounded-[40px] shadow-2xl flex items-center justify-center overflow-hidden border border-white/10">
@@ -110,7 +111,7 @@ export const ClinicTechnologyShowcase = () => {
           </div>
 
           {/* Floating Labels */}
-          <div ref={labelsRef} className="absolute inset-0 pointer-events-none flex items-center justify-center">
+          <div ref={labelsRef} className="absolute inset-0 pointer-events-none">
             {techLabels.map((label, idx) => (
               <div 
                 key={idx} 
