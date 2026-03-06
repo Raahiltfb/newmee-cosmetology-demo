@@ -3,9 +3,9 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
-  --color-primary: #1a1a1a;
-  --color-accent: #8b5cf6;
-  --color-neutral-soft: #f8f9fa;
+  --color-primary: #111111;
+  --color-accent: #C8A46B;
+  --color-neutral-soft: #F8F7F4;
 }
 
 @layer base {
