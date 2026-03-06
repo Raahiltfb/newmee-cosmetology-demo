@@ -22,37 +22,37 @@ export const TREATMENTS = [
     id: 1,
     name: "HydraFacial MD",
     description: "The ultimate skin detoxifying and deep hydrating treatment for an instant glow.",
-    image: "/featured1.png",
+    image: "/featured1.jpg",
   },
   {
     id: 2,
     name: "Laser Hair Reduction",
     description: "Pain-free, permanent hair reduction using US-FDA approved Triple Wavelength technology.",
-    image: "/featured2.png",
+    image: "/featured2.jpg",
   },
   {
     id: 3,
     name: "Acne & Scar Revision",
     description: "Advanced chemical peels and CO2 fractional laser for smooth, blemish-free skin.",
-    image: "/featured3.png",
+    image: "/featured3.jpg",
   },
   {
     id: 4,
     name: "Skin Rejuvenation",
     description: "Anti-aging solutions including Botox, Fillers, and HIFU for a youthful lift.",
-    image: "/featured4.png",
+    image: "/featured4.jpg",
   },
   {
     id: 5,
     name: "Pigmentation Therapy",
     description: "Targeted treatments for melasma, sun spots, and uneven skin tone.",
-    image: "/featured5.png",
+    image: "/featured5.jpg",
   },
   {
     id: 6,
     name: "Hair Growth Therapy",
     description: "PRP and GFC treatments to combat hair loss and promote natural regrowth.",
-    image: "/featured6.png",
+    image: "/featured6.jpg",
   },
 ];
 
