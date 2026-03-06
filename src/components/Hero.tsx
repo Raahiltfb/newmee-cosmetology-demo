@@ -5,19 +5,16 @@ import { CLINIC_DATA } from '../constants';
 
 export const Hero = () => {
   return (
-    // Changed bg-white to bg-neutral-soft for the section background
     <section className="relative min-h-screen pt-32 pb-20 overflow-hidden flex items-center bg-neutral-soft">
       {/* Background Accents */}
-      <div className="absolute top-0 right-0 w-1/2 h-full -z-10 rounded-l-[100px] hidden lg:block" />
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/5 blur-[120px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center">
-        {/* Added bg-white to this div to preserve the text column background */}
+        {/* Text Column - Removed bg-white box and padding */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-white p-8 rounded-[40px]"
         >
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -72,6 +69,7 @@ export const Hero = () => {
           </div>
         </motion.div>
 
+        {/* Image Column */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
