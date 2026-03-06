@@ -62,20 +62,20 @@ export const REVIEWS = [
     name: "Aayush Meena",
     text: "Visited for hair and skin. I can certainly see improvement in my skin texture. Did 3 sessions of PRP till now. Results are visible. Doctor is very reasonable and patient. They listen to you properly and understand the history then recommends solutions with proper explanation.",
     rating: 5,
-    image: "https://i.pravatar.cc/150?u=ananya",
+    image: "/aayushmeena.png",
   },
   {
     id: 2,
     name: "Akshay Biju",
     text: "I have undergone GFC treatment from NewMee Cosmetology Clinic. I'm very satisfied with their service. Doctor suggested me the right treatment to take and clearly explained me how the treatment works. Other doctors and Team behaviour is also good and they are very professional in what they do. Thanks Sir..",
     rating: 5,
-    image: "https://i.pravatar.cc/150?u=rahul",
+    image: "/akshaybiju.png",
   },
   {
     id: 3,
     name: "Mithun Gowda",
     text: "Have been visiting this new newly opened Place since 5/6 months and it's very spacious with modern interiors. Stylist Salman is very professional and good at his work. Overall it's good place with moderate prices.",
     rating: 5,
-    image: "https://i.pravatar.cc/150?u=priya",
+    image: "/mithungowda.png",
   },
 ];
