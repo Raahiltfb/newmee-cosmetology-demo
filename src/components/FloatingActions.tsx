@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { CLINIC_DATA } from '../constants';
 
 export const FloatingActions = () => {
   return (
     <>
-      {/* WhatsApp Button */}
+      {/* WhatsApp Button - Kept as the primary floating action */}
       <motion.a
         href={`https://wa.me/${CLINIC_DATA.whatsapp}`}
         initial={{ scale: 0, opacity: 0 }}
@@ -22,22 +22,6 @@ export const FloatingActions = () => {
           <MessageCircle size={32} />
         </motion.div>
       </motion.a>
-
-      {/* Mobile Sticky Call Button */}
-      <div className="fixed bottom-0 left-0 right-0 z-[60] md:hidden bg-white/80 backdrop-blur-md border-t border-black/5 p-4 flex gap-4">
-        <a 
-          href={`tel:${CLINIC_DATA.phone}`}
-          className="flex-1 bg-primary text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-2"
-        >
-          <Phone size={20} /> Call Now
-        </a>
-        <a 
-          href="#contact"
-          className="flex-1 bg-accent text-white py-4 rounded-2xl font-bold flex items-center justify-center"
-        >
-          Book Now
-        </a>
-      </div>
     </>
   );
 };
