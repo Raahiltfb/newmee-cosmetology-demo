@@ -23,7 +23,13 @@ export const Hero = () => {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-6"
           >
             <Star size={14} className="fill-accent" />
-            {CLINIC_DATA.googleRating} Google Rating
+            {/* FIX: Ensure the decimal is treated as a distinct character */}
+            <span className="tabular-nums tracking-widest">
+              {CLINIC_DATA.googleRating.toString().includes('.') 
+                ? CLINIC_DATA.googleRating 
+                : `${CLINIC_DATA.googleRating}.0`}
+            </span> 
+            <span className="ml-1">Google Rating</span>
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl font-display font-bold leading-[1.1] mb-6 text-primary tracking-tight">
@@ -43,7 +49,9 @@ export const Hero = () => {
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href={`https://wa.me/${CLINIC_DATA.whatsapp}`}
+              href={`https://wa.me/${CLINIC_DATA.whatsapp.replace(/\D/g, '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-white border border-black/10 text-primary px-8 py-4 rounded-full font-semibold hover:bg-neutral-soft transition-all hover:scale-105 active:scale-95"
             >
               WhatsApp Clinic
@@ -68,14 +76,15 @@ export const Hero = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="relative"
         >
-          <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10">
+          <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10 bg-white">
             <img
               src="/newmeelogo.png"
-              alt="Clinic Interior"
-              className="w-full h-full object-cover"
+              alt="NewMee Cosmetology"
+              className="w-full h-full object-contain p-12"
               referrerPolicy="no-referrer"
             />
           </div>
+          
           {/* Floating Badge */}
           <motion.div
             animate={{ y: [0, -10, 0] }}
@@ -87,7 +96,8 @@ export const Hero = () => {
                 <Star size={24} className="fill-accent" />
               </div>
               <div>
-                <div className="text-xl font-bold text-primary">4.8/5</div>
+                {/* FIX: Explicitly formatted 4.8 */}
+                <div className="text-xl font-bold text-primary tabular-nums">4.8/5</div>
                 <div className="text-xs text-primary/50 font-medium">Patient Satisfaction</div>
               </div>
             </div>
