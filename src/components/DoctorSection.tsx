@@ -23,7 +23,7 @@ export const DoctorSection = () => {
           >
             <div className="aspect-[3/4] rounded-[40px] overflow-hidden shadow-2xl relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1559839734-2b71f153678f?auto=format&fit=crop&q=80&w=1200"
+                src="/doctor.png"
                 alt="Lead Doctor"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -50,11 +50,11 @@ export const DoctorSection = () => {
               Meet Our Expert
             </div>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-primary mb-6 leading-tight">
-              Dr. Sarah Mitchell <br />
+              Dr. Rupali M <br />
               <span className="text-primary/40 font-light">MD, FAAD (Dermatology)</span>
             </h2>
             <p className="text-primary/60 text-lg mb-8 leading-relaxed">
-              With over a decade of experience in medical and cosmetic dermatology, Dr. Mitchell is dedicated to providing evidence-based treatments that deliver natural, long-lasting results. She believes in a holistic approach to skin health, combining advanced technology with personalized care.
+              With over a decade of experience in medical and cosmetic dermatology, Dr. Rupali is dedicated to providing evidence-based treatments that deliver natural, long-lasting results. She believes in a holistic approach to skin health, combining advanced technology with personalized care.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6 mb-10">
@@ -72,7 +72,7 @@ export const DoctorSection = () => {
               href="#contact"
               className="inline-flex items-center justify-center bg-primary text-white px-10 py-4 rounded-full font-bold hover:bg-primary/90 transition-all hover:scale-105 active:scale-95"
             >
-              Consult Dr. Mitchell
+              Consult Dr. Rupali
             </a>
           </motion.div>
         </div>
