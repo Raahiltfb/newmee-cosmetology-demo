@@ -36,7 +36,7 @@ export const Navbar = () => {
         <a href="/" className="flex items-center gap-3 group">
           <div className="h-10 md:h-12 w-auto overflow-hidden transition-transform duration-300 group-hover:scale-105">
             <img 
-              src="/newmeelogo.png" 
+              src="/newmeelogo1.png" 
               alt={CLINIC_DATA.name} 
               className="h-full w-full object-contain"
             />
