@@ -12,7 +12,7 @@ export const WhyChooseUs = () => {
     {
       icon: <Microscope size={32} />,
       title: "Modern Equipment",
-      description: "We use US-FDA approved laser technology and state-of-the-art diagnostic tools for every procedure."
+      description: "We use approved laser technology and state-of-the-art diagnostic tools for every procedure."
     },
     {
       icon: <Sparkles size={32} />,
