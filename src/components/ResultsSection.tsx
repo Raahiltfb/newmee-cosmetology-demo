@@ -108,5 +108,3 @@ export const ResultsSection = () => {
     </section>
   );
 };
-
-Refer to  the attached image - can you zoom out the images a bit (after1 before1 after2 before2 since they are too zoomed in ? Provide full code with this change made
