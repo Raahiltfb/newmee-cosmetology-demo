@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface BeforeAfterSliderProps {
@@ -15,7 +15,7 @@ export const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeAfte
     if (!containerRef.current) return;
     
     const rect = containerRef.current.getBoundingClientRect();
-    const x = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const x = 'touches' in e ? (e as React.TouchEvent).touches[0].clientX : (e as React.MouseEvent).clientX;
     const position = ((x - rect.left) / rect.width) * 100;
     
     setSliderPosition(Math.min(Math.max(position, 0), 100));
@@ -26,27 +26,28 @@ export const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeAfte
       <h3 className="text-2xl font-display font-bold text-primary">{title}</h3>
       <div 
         ref={containerRef}
-        className="relative w-full max-w-2xl aspect-[4/3] rounded-[32px] overflow-hidden cursor-ew-resize select-none shadow-2xl border border-black/5"
+        className="relative w-full max-w-2xl aspect-[4/3] rounded-[32px] overflow-hidden cursor-ew-resize select-none shadow-2xl border border-black/5 bg-neutral-100"
         onMouseMove={handleMove}
         onTouchMove={handleMove}
       >
-        {/* After Image (Background) */}
+        {/* After Image (Background) - Changed to object-contain and scaled to 'zoom out' */}
         <img 
           src={afterImage} 
           alt="After" 
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain p-4 scale-95"
           referrerPolicy="no-referrer"
         />
         
-        {/* Before Image (Overlay) */}
+        {/* Before Image (Overlay) - Container width controlled by slider */}
         <div 
-          className="absolute inset-0 w-full h-full overflow-hidden"
+          className="absolute inset-0 h-full overflow-hidden z-10"
           style={{ width: `${sliderPosition}%` }}
         >
+          {/* Before Image - Matching object-contain and scale-95 to ensure alignment */}
           <img 
             src={beforeImage} 
             alt="Before" 
-            className="absolute inset-0 w-full h-full object-cover max-w-none"
+            className="absolute inset-0 h-full object-contain p-4 scale-95 max-none"
             style={{ width: containerRef.current?.offsetWidth }}
             referrerPolicy="no-referrer"
           />
@@ -57,17 +58,17 @@ export const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeAfte
           className="absolute top-0 bottom-0 w-1 bg-white shadow-lg z-20 flex items-center justify-center"
           style={{ left: `${sliderPosition}%` }}
         >
-          <div className="w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center gap-1">
-            <div className="w-1 h-4 bg-accent/30 rounded-full" />
-            <div className="w-1 h-4 bg-accent/30 rounded-full" />
+          <div className="w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center gap-1 border border-neutral-200">
+            <div className="w-0.5 h-4 bg-neutral-400 rounded-full" />
+            <div className="w-0.5 h-4 bg-neutral-400 rounded-full" />
           </div>
         </div>
 
-        {/* Labels */}
-        <div className="absolute bottom-6 left-6 bg-black/30 backdrop-blur-md text-white text-xs font-bold px-4 py-2 rounded-full z-10">
+        {/* Labels - Positioned inside to stay visible with zoomed out images */}
+        <div className="absolute bottom-8 left-8 bg-black/50 backdrop-blur-md text-white text-[10px] tracking-widest font-bold px-3 py-1.5 rounded-full z-30">
           BEFORE
         </div>
-        <div className="absolute bottom-6 right-6 bg-black/30 backdrop-blur-md text-white text-xs font-bold px-4 py-2 rounded-full z-10">
+        <div className="absolute bottom-8 right-8 bg-black/50 backdrop-blur-md text-white text-[10px] tracking-widest font-bold px-3 py-1.5 rounded-full z-30">
           AFTER
         </div>
       </div>
@@ -77,12 +78,13 @@ export const BeforeAfterSlider = ({ beforeImage, afterImage, title }: BeforeAfte
 
 export const ResultsSection = () => {
   return (
-    <section id="results" className="py-24 bg-neutral-soft">
+    <section id="results" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-4xl md:text-5xl font-display font-bold text-primary mb-6"
           >
             Real Results, Real People
@@ -94,12 +96,12 @@ export const ResultsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           <BeforeAfterSlider 
-            title="Acne Scar Revision"
+            title="Skin Brightening"
             beforeImage="/before1.jpg"
             afterImage="/after1.jpg"
           />
           <BeforeAfterSlider 
-            title="Skin Brightening"
+            title="Microneedling"
             beforeImage="/before2.jpg"
             afterImage="/after2.jpg"
           />
