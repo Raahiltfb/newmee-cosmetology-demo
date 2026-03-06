@@ -78,7 +78,7 @@ export const Hero = () => {
         >
           <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10 bg-white">
             <img
-              src="/landing.png"
+              src="/landingnew.png"
               alt="NewMee Cosmetology"
               className="w-full h-full object-contain p-12"
               referrerPolicy="no-referrer"
