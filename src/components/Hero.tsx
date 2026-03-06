@@ -23,7 +23,6 @@ export const Hero = () => {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider mb-6"
           >
             <Star size={14} className="fill-accent" />
-            {/* FIX: Ensure the decimal is treated as a distinct character */}
             <span className="tabular-nums tracking-widest">
               {CLINIC_DATA.googleRating.toString().includes('.') 
                 ? CLINIC_DATA.googleRating 
@@ -80,9 +79,10 @@ export const Hero = () => {
             <img
               src="/landingnew.png"
               alt="NewMee Cosmetology"
-              className="w-full h-full object-contain p-12"
+              className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none" />
           </div>
           
           {/* Floating Badge */}
@@ -96,8 +96,11 @@ export const Hero = () => {
                 <Star size={24} className="fill-accent" />
               </div>
               <div>
-                {/* FIX: Explicitly formatted 4.8 */}
-                <div className="text-xl font-bold text-primary tabular-nums">4.8/5</div>
+                <div className="text-xl font-bold text-primary tabular-nums">
+                  {CLINIC_DATA.googleRating.toString().includes('.') 
+                    ? CLINIC_DATA.googleRating 
+                    : `${CLINIC_DATA.googleRating}.0`}/5
+                </div>
                 <div className="text-xs text-primary/50 font-medium">Patient Satisfaction</div>
               </div>
             </div>
