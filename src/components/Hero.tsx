@@ -54,7 +54,7 @@ export const Hero = () => {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-white border border-black/10 text-primary px-8 py-4 rounded-full font-semibold hover:bg-neutral-soft transition-all hover:scale-105 active:scale-95"
             >
-              WhatsApp Clinic
+              Contact Clinic
             </a>
           </div>
 
