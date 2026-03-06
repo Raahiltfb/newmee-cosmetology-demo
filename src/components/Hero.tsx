@@ -70,7 +70,7 @@ export const Hero = () => {
         >
           <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10">
             <img
-              src="https://images.unsplash.com/photo-1579154235602-3c20fa4f597e?auto=format&fit=crop&q=80&w=1200"
+              src="/Interior.jpg"
               alt="Clinic Interior"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
