@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 
 export const ClinicGallery = () => {
   const images = [
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1579154235602-3c20fa4f597e?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&q=80&w=800",
-    "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800",
+    "/interior1.jpg",
+    "/interior2.jpg",
+    "/interior3.jpg",
+    "/interior4.jpg",
+    "/interior5.jpg",
+    "/interior6.jpg",
   ];
 
   return (
